@@ -1,6 +1,7 @@
 import 'dart:convert';
 
-import 'package:flutter/material.dart';import 'package:http/http.dart' as http;
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 class ApiGImage extends StatefulWidget {
   const ApiGImage({super.key});
 
@@ -64,7 +65,7 @@ class _ApiGImageState extends State<ApiGImage> {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.all(8.0),
-      child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      child: Row(mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Text(title),
           Expanded(child: Text(value,overflow: TextOverflow.ellipsis,
