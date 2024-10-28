@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'get api/get api example.dart';
+import 'get api/get api with image.dart';
+
+
 
 void main() {
   runApp(const MyApp());
@@ -33,7 +35,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: GetApiExample(),
+      home:  ApiGImage (),
     );
   }
 }
