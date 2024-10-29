@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pallaviapi/post%20api/post%20api.dart';
 
+import 'get api/get api example.dart';
 import 'get api/get api with image.dart';
 import 'imageuploadscreen.dart';
 
@@ -45,7 +46,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:  ApiScreen (),
+      home:  GetApiExample (),
     );
   }
 }

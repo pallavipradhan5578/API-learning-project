@@ -40,16 +40,19 @@ class _GetApiExampleState extends State<GetApiExample> {
                       return Text("data loading");
                     }
                     return ListView.builder(itemCount: data.length,itemBuilder: (context, index) {
-                      return Card(
-                        child: Column(
-                          children: [ReuableRow(title:'ID' ,value: data[index]['id'].toString(),),
-                        ReuableRow(title: 'Username', value:  data[index]['username'].toString()),
-                            ReuableRow(title: 'Name', value: data[index]['Name'].toString() ),
-                            ReuableRow(title: 'Email', value: data[index]['email'].toString() ),
-                            ReuableRow(title: 'Address', value: data[index]['address']['street'].toString()),
-                            ReuableRow(title: 'Geo', value: data[index]['address']['geo']['lng'].toString()),
-                            ReuableRow(title: 'Geo', value: data[index]['address']['geo']['lat'].toString())
-                          ],
+                      return Padding(
+                        padding: const EdgeInsets.all(18.0),
+                        child: Card(color: Colors.blue.shade300,
+                          child: Column(
+                            children: [ReuableRow(title:'ID' ,value: data[index]['id'].toString(),),
+                          ReuableRow(title: 'Username', value:  data[index]['username'].toString()),
+                              ReuableRow(title: 'Name', value: data[index]['Name'].toString() ),
+                              ReuableRow(title: 'Email', value: data[index]['email'].toString() ),
+                              ReuableRow(title: 'Address', value: data[index]['address']['street'].toString()),
+                              ReuableRow(title: 'Geo', value: data[index]['address']['geo']['lng'].toString()),
+                              ReuableRow(title: 'Geo', value: data[index]['address']['geo']['lat'].toString())
+                            ],
+                          ),
                         ),
                       );
                     });
