@@ -10,13 +10,13 @@ class GetApiPractices extends StatefulWidget {
 }
 
 class _GetApiPracticesState extends State<GetApiPractices> {
-  List<dynamic>? data; // Store the list of products
+  List<dynamic>? data;
 
   Future<void> getUserApi() async {
     final response = await http.get(Uri.parse('https://dummyjson.com/products'));
 
     if (response.statusCode == 200) {
-      // Parse JSON and set data
+
       setState(() {
         data = jsonDecode(response.body)['products'];
       });
@@ -28,7 +28,7 @@ class _GetApiPracticesState extends State<GetApiPractices> {
   @override
   void initState() {
     super.initState();
-    getUserApi(); // Fetch data when the widget is first created
+    getUserApi();
   }
 
   @override

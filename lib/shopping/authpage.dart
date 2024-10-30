@@ -69,7 +69,7 @@ class _AuthPageState extends State<AuthPage> {
               controller: _passwordController,
               decoration: InputDecoration(
                   labelText: 'Password', border: OutlineInputBorder()),
-              obscureText: true,
+              //obscureText: true,
             ),
             SizedBox(height: 20),
             ElevatedButton(
