@@ -5,6 +5,7 @@ import 'package:pallaviapi/shopping/authpage.dart';
 import 'package:pallaviapi/shopping/commenta_page.dart';
 import 'package:pallaviapi/shopping/homepage.dart';
 import 'package:pallaviapi/shopping/post_page.dart';
+import 'package:pallaviapi/shopping/todo_page.dart';
 
 import 'get api/getapipractics.dart';
 import 'get api/postpage.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: CommentsScreen(),debugShowCheckedModeBanner: false,
+      home:TodoScreen(),debugShowCheckedModeBanner: false,
     );
   }
 }
