@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pallaviapi/pratics.dart';
 import 'package:pallaviapi/shopping/Userdetailpage.dart';
 
 import 'package:pallaviapi/shopping/authpage.dart';
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:HomePage (),debugShowCheckedModeBanner: false,
+      home:RadioWidgetExample (),debugShowCheckedModeBanner: false,
     );
   }
 }
