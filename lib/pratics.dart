@@ -1,47 +1,88 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
+class StudentManagement extends StatefulWidget {
+  const StudentManagement({super.key});
+
+  @override
+  State<StudentManagement> createState() => _StudentManagementState();
 }
 
-class MyApp extends StatelessWidget {
+class _StudentManagementState extends State<StudentManagement> {
+  dynamic arrStudentName = [
+    "Sona",
+    "Pihu",
+    "Ruhi",
+    "Niya",
+    "Mannat",
+    "Dua",
+    "Barkkat",
+    "Nur"
+  ];
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(title: Text("AlertDialog Example")),
-        body: Center(
-          child: AlertDialogButton(),
-        ),
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.blue,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.add),
+            onPressed: () {
+              // Show the dialog to add a new name
+              showDialog(
+                context: context,
+                builder: (context) {
+                  String newName = ""; // Variable to store the input name
+                  return AlertDialog(
+                    title:  Text("Add Name"),
+                    content: TextField(
+                      onChanged: (value) {
+                        newName = value; // Update name as user types
+                      },
+                      decoration: InputDecoration(hintText: "Enter name"),
+                    ),
+                    actions: [
+                      TextButton(
+                        onPressed: () {
+                          if (newName.isNotEmpty) {
+                            setState(() {
+                              arrStudentName.add(newName); // Add new name to the list
+                            });
+                          }
+                          Navigator.of(context).pop(); // Close the dialog
+                        },
+                        child: const Text("Submit"),
+                      ), TextButton(
+                        onPressed: () {
+                          if (newName.isNotEmpty) {
+                            setState(() {
+                              arrStudentName.add(newName); // Add new name to the list
+                            });
+                          }
+                          Navigator.of(context).pop(); // Close the dialog
+                        },
+                        child: const Text("Exit"),
+                      ),
+                    ],
+                  );
+                },
+              );
+            },
+          )
+        ],
       ),
-    );
-  }
-}
-
-class AlertDialogButton extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {
-        showDialog(
-          context: context,
-          builder: (BuildContext context) {
-            return AlertDialog(
-              title: Text("Alert"),
-              content: Text("This is a simple alert dialog."),
-              actions: [
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                  child: Text("OK"),
-                ),
-              ],
-            );
-          },
-        );
-      },
-      child: Text("Show Alert"),
+      body: ListView.builder(
+        itemBuilder: (context, index) {
+          return ListTile(
+            title: Text(
+              arrStudentName[index],
+              style: const TextStyle(fontWeight: FontWeight.bold),
+            ),
+          );
+        },
+        itemCount: arrStudentName.length,
+        itemExtent: 100,
+      ),
     );
   }
 }
