@@ -13,7 +13,7 @@ class _GetApiExampleState extends State<GetApiExample> {
   var data;
   Future<void> getUserApi() async {
     final response =
-        await http.get(Uri.parse('https://jsonplaceholder.typicode.com/users'));
+        await http.get(Uri.parse('https://www.omdbapi.com/?apikey=720ddd7c&s=Inception'));
     if (response.statusCode == 200) {
       data = jsonDecode(response.body.toString());
     } else {}
@@ -44,14 +44,11 @@ class _GetApiExampleState extends State<GetApiExample> {
                         padding: const EdgeInsets.all(18.0),
                         child: Card(color: Colors.blue.shade300,
                           child: Column(
-                            children: [ReuableRow(title:'ID' ,value: data[index]['id'].toString(),),
-                          ReuableRow(title: 'Username', value:  data[index]['username'].toString()),
-                              ReuableRow(title: 'Name', value: data[index]['Name'].toString() ),
-                              ReuableRow(title: 'Email', value: data[index]['email'].toString() ),
-                              ReuableRow(title: 'Address', value: data[index]['address']['street'].toString()),
-                              ReuableRow(title: 'Geo', value: data[index]['address']['geo']['lng'].toString()),
-                              ReuableRow(title: 'Geo', value: data[index]['address']['geo']['lat'].toString())
-                            ],
+                            children: [
+                          ReuableRow(title: 'Search', value:  data[index]['Search']['Title'].toString()),
+                              ReuableRow(title: 'Name', value: data[index]['Search']['Year'].toString() ),
+                              ReuableRow(title: 'Year', value: data[index]['email'].toString() ),
+                              ]
                           ),
                         ),
                       );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pallaviapi/assignment.dart';
 import 'package:pallaviapi/pratics.dart';
 import 'package:pallaviapi/shopping/Userdetailpage.dart';
 
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:StudentManagement (),debugShowCheckedModeBanner: false,
+      home: Assignment (),debugShowCheckedModeBanner: false,
     );
   }
 }
