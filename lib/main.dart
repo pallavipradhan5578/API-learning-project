@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:pallaviapi/assignment.dart';
 import 'package:pallaviapi/custompop.dart';
+import 'package:pallaviapi/deleteApi.dart';
+import 'package:pallaviapi/get%20api/get%20api%20example.dart';
+import 'package:pallaviapi/get%20api/get%20api%20with%20image.dart';
+import 'package:pallaviapi/imageuploadscreen.dart';
 import 'package:pallaviapi/pratics.dart';
 import 'package:pallaviapi/shopping/Userdetailpage.dart';
 
@@ -36,7 +40,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: PopScreenMyApp  (),debugShowCheckedModeBanner: false,
+      home: MyHomePage (),debugShowCheckedModeBanner: false,
     );
   }
 }
