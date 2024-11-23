@@ -15,15 +15,18 @@ class _AssetImagePracticsState extends State<AssetImagePractics> {
         appBar: AppBar(
           title: Text(
             "Assets",
-            style: TextStyle(color: Colors.blue,fontSize: 25,fontWeight: FontWeight.bold),
-          ),centerTitle: true,
+            style: TextStyle(
+                color: Colors.blue, fontSize: 25, fontWeight: FontWeight.bold),
+          ),
+          centerTitle: true,
         ),
         body: Container(
             child: Center(
           child: TextButton(
               style: TextButton.styleFrom(backgroundColor: Colors.white),
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => ImagePage()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ImagePage()));
               },
               child: Text(
                 "Show Image",
@@ -32,13 +35,16 @@ class _AssetImagePracticsState extends State<AssetImagePractics> {
         )));
   }
 }
+
 class ImagePage extends StatelessWidget {
   const ImagePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(),body: Text("data"),
-      
+    return Scaffold(
+      backgroundColor: Colors.blue,
+      appBar: AppBar(),
+      body: Center(child: Image.asset('assets/images/download.jpeg')),
     );
   }
 }
