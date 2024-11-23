@@ -1,70 +1,44 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const PopScreenMyApp());
-}
-
-class PopScreenMyApp extends StatelessWidget {
-  const PopScreenMyApp({Key? key}) : super(key: key);
+class AssetImagePractics extends StatefulWidget {
+  const AssetImagePractics({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
-    );
-  }
+  State<AssetImagePractics> createState() => _AssetImagePracticsState();
 }
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
-
+class _AssetImagePracticsState extends State<AssetImagePractics> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("AppBar with More Vert"),
-        actions: [
-          PopupMenuButton<String>(
-            icon: const Icon(Icons.more_vert),
-            onSelected: (value) {
-              if (value == 'page1') {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const NewPage()),
-                );
-              }
-            },
-            itemBuilder: (BuildContext context) {
-              return [
-                const PopupMenuItem(
-                  value: 'page1',
-                  child: Text('Open New Page'),
-                ),
-              ];
-            },
-          ),
-        ],
-      ),
-      body: const Center(
-        child: Text('Home Screen'),
-      ),
-    );
+        backgroundColor: Colors.blue,
+        appBar: AppBar(
+          title: Text(
+            "Assets",
+            style: TextStyle(color: Colors.blue,fontSize: 25,fontWeight: FontWeight.bold),
+          ),centerTitle: true,
+        ),
+        body: Container(
+            child: Center(
+          child: TextButton(
+              style: TextButton.styleFrom(backgroundColor: Colors.white),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ImagePage()));
+              },
+              child: Text(
+                "Show Image",
+                style: TextStyle(fontSize: 25),
+              )),
+        )));
   }
 }
-
-class NewPage extends StatelessWidget {
-  const NewPage({Key? key}) : super(key: key);
+class ImagePage extends StatelessWidget {
+  const ImagePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('New Page'),
-      ),
-      body: const Center(
-        child: Text('This is a new page!'),
-      ),
+    return Scaffold(appBar: AppBar(),body: Text("data"),
+      
     );
   }
 }
